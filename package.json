@@ -1,0 +1,27 @@
+{
+  "name": "boreads",
+  "version": "1.0.0",
+  "description": "a super tiny css lib. for learning",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rm -rf css && node-sass scss -o css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZWkang/Boreads.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZWkang/Boreads/issues"
+  },
+  "homepage": "https://github.com/ZWkang/Boreads#readme",
+  "devDependencies": {
+    "node-sass": "^4.12.0"
+  },
+  "files": [
+    "css",
+    "scss"
+  ]
+}
