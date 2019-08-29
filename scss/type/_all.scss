@@ -1,0 +1,75 @@
+@import '../media/_all.scss';
+
+$font-family: '';
+
+$line-small: 1.0;
+$line-midlle: 1.5;
+$line-big: 2;
+
+body {
+    font-family: $font-family;
+    line-height: $line-midlle;
+    font-weight: 400;
+}
+
+$response: (0: (2rem, 1.75rem, 1.5rem, 1.25rem, 1.25rem, 1.25rem),
+    768px: (4rem, 2rem, 1.5rem, 1.25rem, 1.25rem, 1.25rem),
+    1024px: (6rem, 3rem, 2rem, 1.25rem, 1.25rem, 1.25rem));
+
+
+
+@each $breakp in map-keys($response) {
+    @include break($breakp) {
+        $keylist: map-get($response, $breakp);
+
+        @for $i from 1 to length($keylist) {
+            $l: nth($keylist, $i);
+
+            .h#{$i} {
+                font-size: $l;
+            }
+
+            h#{$i} {
+                font-size: $l;
+            }
+        }
+    }
+}
+
+$textAligns: (left, right, center);
+
+@function firstletter($name) {
+    @return str-slice($name, 1, 1);
+}
+
+@each $textAlign in $textAligns {
+    $tt: firstletter($textAlign);
+
+    .ta#{$tt} {
+        text-align: $textAlign;
+    }
+}
+
+.type-margins {
+
+    h1,
+    .h1 {
+        margin-bottom: $space;
+    }
+
+    h2,
+    .h2 {
+        margin-bottom: $space;
+    }
+
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    dl,
+    ol,
+    ul {
+        margin-bottom: $space;
+    }
+}

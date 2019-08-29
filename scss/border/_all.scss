@@ -1,0 +1,23 @@
+$border-init-color: rgba(0, 0, 0, 1) !default;
+
+@for $index from 1 through 100 {
+    .b--black-#{$index/100 * 100} {
+        border-style: RGBA(red($border-init-color), green($border-init-color), blue($border-init-color), $index / 100)
+    }
+}
+
+
+$ranges: ('top', 'right', 'bottom', 'left');
+
+
+.ba {
+    border: 1px solid;
+}
+
+@each $range in $ranges {
+    $r: str-slice($range, 1, 1);
+
+    .b#{$r} {
+        border-#{$ranges}: 1px solid;
+    }
+}

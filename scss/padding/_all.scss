@@ -1,0 +1,16 @@
+$space: 1rem !default;
+$ranges: ('top', 'right', 'bottom', 'left');
+
+@for $index from 1 to 8 {
+    @each $range in $ranges {
+        $r: str-slice($range, 1, 1);
+
+        .p#{$r}#{$index} {
+            padding-#{$range}: $space * $index;
+        }
+    }
+
+    .p#{$index} {
+        padding: $space * $index;
+    }
+}

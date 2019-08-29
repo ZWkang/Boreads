@@ -1,0 +1,30 @@
+$positionranges: (relative, absolute, fixed);
+
+@each $positionrange in $positionranges {
+    $p: str-slice($positionrange, 1, 1);
+
+    .p#{$p} {
+        position: $positionrange;
+    }
+
+    $ranges: ("top", "right", "bottom", "left");
+
+    @each $range in $ranges {
+        $t: str-slice($range, 1, 1);
+
+        .p#{$p}#{$t}0 {
+            $range: 0;
+        }
+    }
+}
+
+
+
+.pac {
+    @extend .pa,
+    .pat0,
+    .par0,
+    .pab0,
+    .pal0;
+    margin: auto;
+}

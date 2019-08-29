@@ -1,0 +1,57 @@
+@import '../media/_all.scss';
+
+$columns: 12;
+$gutter: 8px;
+$breakpoint: 640px;
+$column-width: calc(#{(100% / $columns)} - #{$gutter});
+
+$breakpointsmap: (0: 0px, sm: 576px, md: 768px, lg: 992px, xl: 1200px);
+
+// $mapsuse: map-keys($breakpointsmap);
+
+
+.column {
+    margin: 0 -$gutter/2;
+    width: 100%;
+    display: inline-block;
+}
+
+// flex math
+// width: calc(#{100% / $__grid--columns * $i} - #{$gutter-size / $__grid--columns * ($__grid--columns - $i)});
+
+@mixin generatorRow($columns, $column, $gutter) {
+    float: left;
+    width: (100% / $columns) * $column;
+    padding-left: $gutter / 2;
+    padding-right: $gutter / 2;
+    box-sizing: border-box;
+}
+
+@each $mapuse,
+$bk in $breakpointsmap {
+    @if $mapuse !=0 {
+        @for $column from 1 through $columns {
+            @include break($bk) {
+                .col-#{$mapuse}-#{$column} {
+                    @include generatorRow($columns, $column, $gutter)
+                }
+
+                .col-#{$mapuse}-offset-#{$column} {
+                    margin-left: 100% / $columns * $column
+                }
+            }
+        }
+    }
+
+    @else {
+        @for $column from 1 through $columns {
+            .col-#{$column} {
+                @include generatorRow($columns, $column, $gutter)
+            }
+
+            .col-offset-#{$column} {
+                margin-left: 100% / $columns * $column
+            }
+        }
+    }
+}
