@@ -1,7 +1,7 @@
 $space: 8px;
 $ranges: ('top', 'right', 'bottom', 'left') !default;
 
-@for $index from 1 to 8 {
+@for $index from 1 through 8 {
     @each $range in $ranges {
         $r: str-slice($range, 1, 1);
 

@@ -10,6 +10,12 @@ $responsive-image-max-y: 16 !default;
     box-sizing: border-box;
 }
 
+.img-full {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
 @mixin fix-size-with-image {
     @each $inc in $incList {
         $image-temp: $imageSizeBase + $inc;
@@ -17,6 +23,10 @@ $responsive-image-max-y: 16 !default;
         .is-#{$image-temp}-#{$image-temp} {
             width: $image-temp#{px};
             height: $image-temp#{px};
+
+            &>img {
+                @extend .img-full;
+            }
         }
     }
 }
@@ -26,6 +36,7 @@ $responsive-image-max-y: 16 !default;
 
 .rounded {
     border-radius: 99999px;
+    overflow: hidden;
 }
 
 .image-responsive-clildren-full {
@@ -36,12 +47,13 @@ $responsive-image-max-y: 16 !default;
     top: 0;
     height: 100%;
     width: 100%;
+    display: block;
 }
 
 @mixin fix-responsive-image {
     @for $x from 1 to $responsive-image-max-x {
         @for $y from 1 to $responsive-image-max-y {
-            .is-#{$x}-#{$y} {
+            .is-#{$x}-by-#{$y} {
                 padding-bottom: (($x / $y) * 100)#{"%"};
                 box-sizing: border-box;
 
