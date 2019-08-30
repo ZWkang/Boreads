@@ -22,6 +22,7 @@
   },
   "files": [
     "css",
-    "scss"
+    "scss",
+    "atomic"
   ]
 }
