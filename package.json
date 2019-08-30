@@ -11,7 +11,10 @@
     "type": "git",
     "url": "git+https://github.com/ZWkang/Boreads.git"
   },
-  "author": "",
+  "keywords": [
+    "css", "scss", "atomic"
+  ],
+  "author": "ZWkang",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ZWkang/Boreads/issues"
