@@ -1,11 +1,11 @@
 @import '../media/_all.scss';
 
-$columns: 12;
-$gutter: 8px;
-$breakpoint: 640px;
-$column-width: calc(#{(100% / $columns)} - #{$gutter});
+$columns: 12 !default;
+$gutter: 8px !default;
+$breakpoint: 640px !default;
+$column-width: calc(#{(100% / $columns)} - #{$gutter}) !default;
 
-$breakpointsmap: (0: 0px, sm: 576px, md: 768px, lg: 992px, xl: 1200px);
+$breakpointsmap: (0: 0px, sm: 576px, md: 768px, lg: 992px, xl: 1200px) !default;
 
 // $mapsuse: map-keys($breakpointsmap);
 
@@ -27,31 +27,37 @@ $breakpointsmap: (0: 0px, sm: 576px, md: 768px, lg: 992px, xl: 1200px);
     box-sizing: border-box;
 }
 
-@each $mapuse,
-$bk in $breakpointsmap {
-    @if $mapuse !=0 {
-        @for $column from 1 through $columns {
-            @include break($bk) {
-                .col-#{$mapuse}-#{$column} {
+@mixin build-columns {
+
+    @each $mapuse,
+    $bk in $breakpointsmap {
+        @if $mapuse !=0 {
+            @for $column from 1 through $columns {
+                @include break($bk) {
+                    .col-#{$mapuse}-#{$column} {
+                        @include generatorRow($columns, $column, $gutter)
+                    }
+
+                    .col-#{$mapuse}-offset-#{$column} {
+                        margin-left: 100% / $columns * $column
+                    }
+                }
+            }
+        }
+
+        @else {
+            @for $column from 1 through $columns {
+                .col-#{$column} {
                     @include generatorRow($columns, $column, $gutter)
                 }
 
-                .col-#{$mapuse}-offset-#{$column} {
+                .col-offset-#{$column} {
                     margin-left: 100% / $columns * $column
                 }
             }
         }
     }
 
-    @else {
-        @for $column from 1 through $columns {
-            .col-#{$column} {
-                @include generatorRow($columns, $column, $gutter)
-            }
-
-            .col-offset-#{$column} {
-                margin-left: 100% / $columns * $column
-            }
-        }
-    }
 }
+
+@include build-columns();

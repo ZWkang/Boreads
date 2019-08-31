@@ -1,16 +1,20 @@
-$space: 8px;
+$space: 8px !default;
 $ranges: ('top', 'right', 'bottom', 'left') !default;
 
-@for $index from 1 through 8 {
-    @each $range in $ranges {
-        $r: str-slice($range, 1, 1);
+@mixin build-margin {
+    @for $index from 1 through 8 {
+        @each $range in $ranges {
+            $r: str-slice(quote($range), 1, 1);
 
-        .m#{$r}#{$index} {
-            margin-#{$range}: $space * $index;
+            .m#{$r}#{$index} {
+                margin-#{$range}: $space * $index;
+            }
+        }
+
+        .m#{$index} {
+            margin: $space * $index;
         }
     }
-
-    .m#{$index} {
-        margin: $space * $index;
-    }
 }
+
+@include build-margin();

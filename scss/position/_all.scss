@@ -1,24 +1,27 @@
-$positionranges: (relative, absolute, fixed);
-$ranges: (top, right, bottom, left);
+$positionranges: (relative, absolute, fixed) !default;
+$ranges: (top, right, bottom, left) !default;
 
-@each $positionrange in $positionranges {
-    $p: str-slice($positionrange, 1, 1);
+@mixin build-position {
+    @each $positionrange in $positionranges {
+        $p: str-slice(quote($positionrange), 1, 1);
 
-    .p#{$p} {
-        position: $positionrange;
-    }
+        .p#{$p} {
+            position: $positionrange;
+        }
 
 
-    @each $range in $ranges {
-        $t: str-slice(quote($range), 1, 1);
+        @each $range in $ranges {
+            $t: str-slice(quote($range), 1, 1);
 
-        .p#{$p}#{$t}0 {
-            #{quote($range)}: 0;
+            .p#{$p}#{$t}0 {
+                #{quote($range)}: 0;
+            }
         }
     }
 }
 
 
+@include build-position();
 
 .pac {
     position: absolute;

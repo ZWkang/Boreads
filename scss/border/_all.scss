@@ -1,13 +1,16 @@
 $border-init-color: rgba(0, 0, 0, 1) !default;
+$ranges: ('top', 'right', 'bottom', 'left') !default;
 
-@for $index from 1 through 100 {
-    .b--black-#{$index/100 * 100} {
-        border-color: rgba(red($border-init-color), green($border-init-color), blue($border-init-color), $index / 100)
+
+@mixin build-border-color {
+    @for $index from 1 through 100 {
+        .b--black-#{$index/100 * 100} {
+            border-color: rgba(red($border-init-color), green($border-init-color), blue($border-init-color), $index / 100)
+        }
     }
 }
 
-
-$ranges: ('top', 'right', 'bottom', 'left');
+@include build-border-color();
 
 
 .ba {
@@ -20,12 +23,16 @@ $ranges: ('top', 'right', 'bottom', 'left');
     border: 0;
 }
 
-@each $range in $ranges {
-    $r: str-slice($range, 1, 1);
+@mixin border-line {
+    @each $range in $ranges {
+        $r: str-slice(quote($range), 1, 1);
 
-    .b#{$r} {
-        // border-#{$range}: 1px solid;
-        border-#{$range}-width: 1px;
-        border-#{$range}-style: solid;
+        .b#{$r} {
+            // border-#{$range}: 1px solid;
+            border-#{$range}-width: 1px;
+            border-#{$range}-style: solid;
+        }
     }
 }
+
+@include border-line()

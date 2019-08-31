@@ -1,22 +1,26 @@
-$list: (block, inline-block, flex, table, table-cell, inline);
-$compare: 0;
+$list: (block, inline-block, flex, table, table-cell, inline) !default;
+$compare: 0 !default;
 
-@each $listitem in $list {
-    $has: $listitem;
-    $temp: str-slice($listitem, 1, 1);
-    $needIndex: str-index($listitem, '-');
-    $slices: '';
-
-    // @if (type-of($needIndex)=="number") {
-    @while ($needIndex) {
-        $slices: str-slice($listitem, $needIndex + 1, $needIndex + 1);
-        $temp: #{$temp}#{$slices};
-        $listitem: str-slice($listitem, $needIndex + 2, -1);
+@mixin build-display {
+    @each $listitem in $list {
+        $has: $listitem;
+        $temp: str-slice(quote($listitem), 1, 1);
         $needIndex: str-index($listitem, '-');
-    }
+        $slices: '';
 
-    .d#{$temp} {
-        display: $has;
-    }
+        // @if (type-of($needIndex)=="number") {
+        @while ($needIndex) {
+            $slices: str-slice(quote($listitem), $needIndex + 1, $needIndex + 1);
+            $temp: #{$temp}#{$slices};
+            $listitem: str-slice(quote($listitem), $needIndex + 2, -1);
+            $needIndex: str-index($listitem, '-');
+        }
 
+        .d#{$temp} {
+            display: $has;
+        }
+
+    }
 }
+
+@include build-display();

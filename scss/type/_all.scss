@@ -1,10 +1,10 @@
 @import '../media/_all.scss';
 
-$font-family: '';
+$font-family: '' !default;
 
-$line-small: 1.0;
-$line-midlle: 1.5;
-$line-big: 2;
+$line-small: 1.0 !default;
+$line-midlle: 1.5 !default;
+$line-big: 2 !default;
 
 body {
     font-family: $font-family;
@@ -14,41 +14,49 @@ body {
 
 $response: (0: (2rem, 1.75rem, 1.5rem, 1.25rem, 1.25rem, 1.25rem),
     768px: (4rem, 2rem, 1.5rem, 1.25rem, 1.25rem, 1.25rem),
-    1024px: (6rem, 3rem, 2rem, 1.25rem, 1.25rem, 1.25rem));
+    1024px: (6rem, 3rem, 2rem, 1.25rem, 1.25rem, 1.25rem)) !default;
 
+$textAligns: (left, right, center) !default;
 
+@mixin build-type {
+    @each $breakp in map-keys($response) {
+        @include break($breakp) {
+            $keylist: map-get($response, $breakp);
 
-@each $breakp in map-keys($response) {
-    @include break($breakp) {
-        $keylist: map-get($response, $breakp);
+            @for $i from 1 to length($keylist) {
+                $l: nth($keylist, $i);
 
-        @for $i from 1 to length($keylist) {
-            $l: nth($keylist, $i);
+                .h#{$i} {
+                    font-size: $l;
+                }
 
-            .h#{$i} {
-                font-size: $l;
-            }
-
-            h#{$i} {
-                font-size: $l;
+                h#{$i} {
+                    font-size: $l;
+                }
             }
         }
     }
 }
 
-$textAligns: (left, right, center);
+@include build-type();
+
+
 
 @function firstletter($name) {
-    @return str-slice($name, 1, 1);
+    @return str-slice(quote($name), 1, 1);
 }
 
-@each $textAlign in $textAligns {
-    $tt: firstletter($textAlign);
+@mixin build-textAlign {
+    @each $textAlign in $textAligns {
+        $tt: firstletter($textAlign);
 
-    .ta#{$tt} {
-        text-align: $textAlign;
+        .ta#{$tt} {
+            text-align: $textAlign;
+        }
     }
 }
+
+@include build-textAlign();
 
 .type-margins {
 
