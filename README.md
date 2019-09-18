@@ -1,6 +1,6 @@
 # Boreads
 
-a super tiny css lib. for learning
+a super tiny css lib.
 
 # usage
 
@@ -11,6 +11,11 @@ import "Boreads/css/index.css";
 ```
 
 ## only css!!
+
+
+# Author
+
+[@ZWkang](https://github.com/ZWkang)
 
 # LICENSE
 
