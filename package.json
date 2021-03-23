@@ -5,14 +5,16 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rm -rf css && node-sass scss -o css"
+    "build": "sass scss:css"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ZWkang/Boreads.git"
   },
   "keywords": [
-    "css", "scss", "atomic"
+    "css",
+    "scss",
+    "atomic"
   ],
   "author": "ZWkang",
   "license": "ISC",
@@ -21,7 +23,7 @@
   },
   "homepage": "https://github.com/ZWkang/Boreads#readme",
   "devDependencies": {
-    "node-sass": "4.13.0"
+    "sass": "^1.32.8"
   },
   "files": [
     "css",
