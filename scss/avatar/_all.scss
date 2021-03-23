@@ -54,7 +54,7 @@ $responsive-image-max-y: 16 !default;
     @for $x from 1 to $responsive-image-max-x {
         @for $y from 1 to $responsive-image-max-y {
             .is-#{$x}-by-#{$y} {
-                padding-bottom: (($x / $y) * 100)#{"%"};
+                padding-bottom: (($x / $y) * 100) + '%';
                 box-sizing: border-box;
 
                 &>img {
