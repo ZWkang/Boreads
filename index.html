@@ -1,301 +1,342 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
-    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/index.css" />
     <style>
-        body {
-            padding: 0;
-            margin: 0;
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        }
+      body {
+        padding: 0;
+        margin: 0;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+          sans-serif;
+      }
 
-        main {
-            width: 100%;
-            max-width: 960px;
-            margin: 0 auto;
-        }
+      main {
+        width: 100%;
+        max-width: 960px;
+        margin: 0 auto;
+      }
 
-        div {
-            box-sizing: border-box;
-        }
+      div {
+        box-sizing: border-box;
+      }
 
-        .max-width-30 {
-            width: 100%;
-            max-width: 30%;
-        }
+      .max-width-30 {
+        width: 100%;
+        max-width: 30%;
+      }
 
-        .border-cases-container {
-            display: block;
-        }
+      .border-cases-container {
+        display: block;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <main>
-        <section class="avatar-section">
-            <h1 class="h1" id="avatar">
-                avatar example
-            </h1>
-            <section class="p1">
-                <h3 class="h3">fix size image</h3>
-                <div>
-                    <div class="image is-16-16 mb1">
-                        <img src="./example/1x1picture.jpeg" alt="">
-                    </div>
-                    <div class="image is-24-24 mb1">
-                        <img src="./example/1x1picture.jpeg" alt="">
-                    </div>
-                    <div class="image is-64-64 mb1">
-                        <img src="./example/1x1picture.jpeg" alt="">
-                    </div>
-                    <div class="image is-128-128 mb1">
-                        <img src="./example/1x1picture.jpeg" alt="">
-                    </div>
-                </div>
-            </section>
-            <section class="p1">
-                <h3 class="h3">rounded image</h3>
-                <div>
-                    <div class="image is-48-48 mb1 rounded">
-                        <img src="./example/1x1picture.jpeg" alt="">
-                    </div>
-                </div>
-            </section>
-            <section class="p1">
-                <h3 class="h3">responsive size image</h3>
-                <div class="max-width-30">
-                    <h5 class="h5">1 / 1</h5>
-                    <div class="image is-1-by-1 mb1">
-                        <img src="./example/1x1picture.jpeg" alt="">
-                    </div>
-                    <h5 class="h5">1 / 2</h5>
-                    <div class="image is-1-by-2 mb1">
-                        <img src="./example/1x1picture.jpeg" alt="">
+      <section class="avatar-section">
+        <h1 class="h1" id="avatar">avatar example</h1>
+        <section class="p1">
+          <h3 class="h3">fix size image</h3>
+          <div>
+            <div class="image is-16-16 mb1">
+              <img src="./example/1x1picture.jpeg" alt="" />
+            </div>
+            <div class="image is-24-24 mb1">
+              <img src="./example/1x1picture.jpeg" alt="" />
+            </div>
+            <div class="image is-64-64 mb1">
+              <img src="./example/1x1picture.jpeg" alt="" />
+            </div>
+            <div class="image is-128-128 mb1">
+              <img src="./example/1x1picture.jpeg" alt="" />
+            </div>
+          </div>
+        </section>
+        <section class="p1">
+          <h3 class="h3">rounded image</h3>
+          <div>
+            <div class="image is-48-48 mb1 rounded">
+              <img src="./example/1x1picture.jpeg" alt="" />
+            </div>
+          </div>
+        </section>
+        <section class="p1">
+          <h3 class="h3">responsive size image</h3>
+          <div class="max-width-30">
+            <h5 class="h5">1 / 1</h5>
+            <div class="image is-1-by-1 mb1">
+              <img src="./example/1x1picture.jpeg" alt="" />
+            </div>
+            <h5 class="h5">1 / 2</h5>
+            <div class="image is-1-by-2 mb1">
+              <img src="./example/1x1picture.jpeg" alt="" />
+            </div>
+            <h5 class="h5">1 / 4</h5>
+            <div class="image is-1-by-4 mb1">
+              <img src="./example/1x1picture.jpeg" alt="" />
+            </div>
+            <h5 class="h5">1 / 8</h5>
+            <div class="image is-1-by-8 mb1">
+              <img src="./example/1x1picture.jpeg" alt="" />
+            </div>
+          </div>
+        </section>
+      </section>
+      <section>
+        <section class="p1">
+          <h3 class="h3" id="border">border use</h3>
+          <div>
+            <h5>border position</h5>
+            <div style="width: 40%" class="b--black-50 ba mb1">round</div>
+            <div style="width: 40%" class="b--black-50 bt mb1">top</div>
+            <div style="width: 40%" class="b--black-50 br mb1">right</div>
+            <div style="width: 40%" class="b--black-50 bb mb1">bottom</div>
+            <div style="width: 40%" class="b--black-50 bl mb1">left</div>
+          </div>
+          <h3 class="h3">border color</h3>
+          <div>
+            <h5>border color 1-100 b--black-[1-100]</h5>
+            <div style="width: 40%" class="b--black-10 ba mb1">
+              round b--black-10
+            </div>
+            <div style="width: 40%" class="b--black-20 ba mb1">
+              round b--black-20
+            </div>
+            <div style="width: 40%" class="b--black-30 ba mb1">
+              round b--black-30
+            </div>
+            <div style="width: 40%" class="b--black-40 ba mb1">
+              round b--black-40
+            </div>
+            <div style="width: 40%" class="b--black-50 ba mb1">
+              round b--black-50
+            </div>
+            <div style="width: 40%" class="b--black-60 ba mb1">
+              round b--black-60
+            </div>
+            <div style="width: 40%" class="b--black-70 ba mb1">
+              round b--black-70
+            </div>
+            <div style="width: 40%" class="b--black-80 ba mb1">
+              round b--black-80
+            </div>
+            <div style="width: 40%" class="b--black-90 ba mb1">
+              round b--black-90
+            </div>
+            <div style="width: 40%" class="b--black-100 ba mb1">
+              round b--black-100
+            </div>
+          </div>
+        </section>
+      </section>
+      <section>
+        <section class="p1">
+          <h3 class="h3" id="column">column use</h3>
+          <div>
+            <h5>column position</h5>
 
-                    </div>
-                    <h5 class="h5">1 / 4</h5>
-                    <div class="image is-1-by-4 mb1">
-                        <img src="./example/1x1picture.jpeg" alt="">
+            <div class="col-1 ba mb1">col-1</div>
+            <div class="col-1 ba mb1">col-1</div>
+            <div class="col-1 ba mb1">col-1</div>
+            <div class="col-1 ba mb1">col-1</div>
+            <div class="col-1 ba mb1">col-1</div>
+            <div class="col-1 ba mb1">col-1</div>
+            <div class="col-1 ba mb1">col-1</div>
+            <div class="col-1 ba mb1">col-1</div>
+            <div class="col-1 ba mb1">col-1</div>
+            <div class="col-1 ba mb1">col-1</div>
+            <div class="col-1 ba mb1">col-1</div>
+            <div class="col-1 ba mb1">col-1</div>
 
-                    </div>
-                    <h5 class="h5">1 / 8</h5>
-                    <div class="image is-1-by-8 mb1">
-                        <img src="./example/1x1picture.jpeg" alt="">
-                    </div>
-                </div>
-            </section>
+            <div class="col-2 ba mb1">col-2</div>
+            <div class="col-2 ba mb1">col-2</div>
+            <div class="col-2 ba mb1">col-2</div>
+            <div class="col-2 ba mb1">col-2</div>
+            <div class="col-2 ba mb1">col-2</div>
+            <div class="col-2 ba mb1">col-2</div>
+
+            <div class="col-4 ba mb1">col-4</div>
+            <div class="col-4 ba mb1">col-4</div>
+            <div class="col-4 ba mb1">col-4</div>
+
+            <div class="col-6 ba mb1">col-6</div>
+            <div class="col-6 ba mb1">col-6</div>
+
+            <div class="col-12 ba mb1">col-12</div>
+          </div>
+          <h3 class="h3">column offset use</h3>
+          <div>
+            <h5>col-offset-[1-12]</h5>
+            <div class="col-offset-4 col-4 ba mb1">col-4 col-offset-4</div>
+            <div class="col-4 ba mb1">col-4</div>
+
+            <div class="col-offset-2 col-2 ba mb1">col-2 col-offset-2</div>
+            <div class="col-2 ba mb1">col-2</div>
+            <div class="col-offset-2 col-4 ba mb1">col-4 col-offset-2</div>
+
+            <div class="col-offset-2 col-5 ba mb1">col-5 col-offset-2</div>
+            <div class="col-offset-1 col-4 ba mb1">col-4 col-offset-1</div>
+          </div>
+        </section>
+      </section>
+      <section>
+        <h3 class="h3" id="display">display use</h3>
+        <section>
+          <h5 class="h5">here is inline blocktest</h5>
+          <div class="ba mb1 di p2">inline</div>
+          <div class="ba mb1 di p2">inline</div>
+          <div class="ba mb1 di p2">inline</div>
+          <div class="ba mb1 di p2">inline</div>
         </section>
         <section>
-            <section class="p1">
-                <h3 class="h3" id="border">border use</h3>
-                <div>
-                    <h5>border position</h5>
-                    <div style="width: 40%;" class="b--black-50 ba mb1">round</div>
-                    <div style="width: 40%;" class="b--black-50 bt mb1">top</div>
-                    <div style="width: 40%;" class="b--black-50 br mb1">right</div>
-                    <div style="width: 40%;" class="b--black-50 bb mb1">bottom</div>
-                    <div style="width: 40%;" class="b--black-50 bl mb1">left</div>
-                </div>
-                <h3 class="h3">border color</h3>
-                <div>
-                    <h5>border color 1-100 b--black-[1-100]</h5>
-                    <div style="width: 40%;" class="b--black-10 ba mb1">round b--black-10</div>
-                    <div style="width: 40%;" class="b--black-20 ba mb1">round b--black-20</div>
-                    <div style="width: 40%;" class="b--black-30 ba mb1">round b--black-30</div>
-                    <div style="width: 40%;" class="b--black-40 ba mb1">round b--black-40</div>
-                    <div style="width: 40%;" class="b--black-50 ba mb1">round b--black-50</div>
-                    <div style="width: 40%;" class="b--black-60 ba mb1">round b--black-60</div>
-                    <div style="width: 40%;" class="b--black-70 ba mb1">round b--black-70</div>
-                    <div style="width: 40%;" class="b--black-80 ba mb1">round b--black-80</div>
-                    <div style="width: 40%;" class="b--black-90 ba mb1">round b--black-90</div>
-                    <div style="width: 40%;" class="b--black-100 ba mb1">round b--black-100</div>
-                </div>
-            </section>
+          <h5 class="h5">here is inline block, dib=display: inline-block</h5>
+          <div class="ba mb1 dib p2" style="width: 49%">inline-block</div>
+          <div class="ba mb1 dib p2" style="width: 49%">inline-block</div>
+          <div class="ba mb1 dib p2" style="width: 49%">inline-block</div>
+          <div class="ba mb1 dib p2" style="width: 49%">inline-block</div>
         </section>
         <section>
-            <section class="p1">
-                <h3 class="h3" id="column">column use</h3>
-                <div>
-                    <h5>column position</h5>
-
-                    <div class="col-1 ba mb1">col-1</div>
-                    <div class="col-1 ba mb1">col-1</div>
-                    <div class="col-1 ba mb1">col-1</div>
-                    <div class="col-1 ba mb1">col-1</div>
-                    <div class="col-1 ba mb1">col-1</div>
-                    <div class="col-1 ba mb1">col-1</div>
-                    <div class="col-1 ba mb1">col-1</div>
-                    <div class="col-1 ba mb1">col-1</div>
-                    <div class="col-1 ba mb1">col-1</div>
-                    <div class="col-1 ba mb1">col-1</div>
-                    <div class="col-1 ba mb1">col-1</div>
-                    <div class="col-1 ba mb1">col-1</div>
-
-                    <div class="col-2 ba mb1">col-2</div>
-                    <div class="col-2 ba mb1">col-2</div>
-                    <div class="col-2 ba mb1">col-2</div>
-                    <div class="col-2 ba mb1">col-2</div>
-                    <div class="col-2 ba mb1">col-2</div>
-                    <div class="col-2 ba mb1">col-2</div>
-
-                    <div class="col-4 ba mb1">col-4</div>
-                    <div class="col-4 ba mb1">col-4</div>
-                    <div class="col-4 ba mb1">col-4</div>
-
-                    <div class="col-6 ba mb1">col-6</div>
-                    <div class="col-6 ba mb1">col-6</div>
-
-                    <div class="col-12 ba mb1">col-12</div>
-                </div>
-                <h3 class="h3">column offset use</h3>
-                <div>
-                    <h5>col-offset-[1-12]</h5>
-                    <div class="col-offset-4 col-4 ba mb1">col-4 col-offset-4</div>
-                    <div class="col-4 ba mb1">col-4</div>
-
-                    <div class="col-offset-2 col-2 ba mb1">col-2 col-offset-2</div>
-                    <div class="col-2 ba mb1">col-2</div>
-                    <div class="col-offset-2 col-4 ba mb1">col-4 col-offset-2</div>
-
-                    <div class="col-offset-2 col-5 ba mb1">col-5 col-offset-2</div>
-                    <div class="col-offset-1 col-4 ba mb1">col-4 col-offset-1</div>
-                </div>
-            </section>
+          <h5 class="h5">here is inline block, db=display: block</h5>
+          <span class="ba mb1 db p2" style="width: 49%"
+            >display block width: 49%;</span
+          >
+          <span class="ba mb1 db p2" style="width: 49%"
+            >display block width: 49%;</span
+          >
+          <span class="ba mb1 db p2" style="width: 49%"
+            >display block width: 49%;</span
+          >
+          <span class="ba mb1 db p2" style="width: 49%"
+            >display block width: 49%;</span
+          >
         </section>
+      </section>
+      <section>
+        <h3 class="h3" id="margin">margin use</h3>
+        <section style="overflow: hidden" class="">
+          <h5 class="h5">margin top = mt[1-8]</h5>
+          <div class="bt bb mt1 db p2" style="width: 55%">
+            mt1=margin-top: $space * 1; ($space default is 8px)
+          </div>
+          <div class="bt bb mt2 db p2" style="width: 55%">
+            mt2=margin-top: $space * 2; ($space default is 8px)
+          </div>
+          <div class="bt bb mt4 db p2" style="width: 55%">
+            mt4=margin-top: $space * 4; ($space default is 8px)
+          </div>
+          <div class="bt bb mt8 db p2" style="width: 55%">
+            mt8=margin-top: $space * 8; ($space default is 8px)
+          </div>
+        </section>
+        <section style="overflow: hidden" class="">
+          <h5 class="h5">margin left = ml[1-8]</h5>
+          <div class="bl br b--black-50 ml1 db p2" style="width: 55%">
+            ml1=margin-bottom: $space * 1; ($space default is 8px)
+          </div>
+          <div class="bl br b--black-50 ml2 db p2" style="width: 55%">
+            ml2=margin-bottom: $space * 2; ($space default is 8px)
+          </div>
+          <div class="bl br b--black-50 ml4 db p2" style="width: 55%">
+            ml4=margin-bottom: $space * 4; ($space default is 8px)
+          </div>
+          <div class="bl br b--black-50 ml8 db p2" style="width: 55%">
+            ml8=margin-bottom: $space * 8; ($space default is 8px)
+          </div>
+        </section>
+      </section>
+      <section>
+        <h3 class="h3" id="padding">padding use</h3>
+        <section style="overflow: hidden" class="">
+          <h5 class="h5">padding top = pt[1-8]</h5>
+          <div class="bt bb mt1 db pt1" style="width: 55%">
+            pt1=padding-top: $space * 1; ($space default is 8px)
+          </div>
+          <div class="bt bb mt2 db pt2" style="width: 55%">
+            pt2=padding-top: $space * 2; ($space default is 8px)
+          </div>
+          <div class="bt bb mt4 db pt4" style="width: 55%">
+            pt4=padding-top: $space * 4; ($space default is 8px)
+          </div>
+          <div class="bt bb mt8 db pt8" style="width: 55%">
+            pt8=padding-top: $space * 8; ($space default is 8px)
+          </div>
+        </section>
+        <section style="overflow: hidden" class="">
+          <h5 class="h5">padding left = pl[1-8]</h5>
+          <div class="bl br b--black-50 db pl1" style="width: 55%">
+            pl1=padding-left: $space * 1; ($space default is 8px)
+          </div>
+          <div class="bl br b--black-50 db pl2" style="width: 55%">
+            pl2=padding-left: $space * 2; ($space default is 8px)
+          </div>
+          <div class="bl br b--black-50 db pl4" style="width: 55%">
+            pl4=padding-left: $space * 4; ($space default is 8px)
+          </div>
+          <div class="bl br b--black-50 db pl8" style="width: 55%">
+            pl8=padding-left: $space * 8; ($space default is 8px)
+          </div>
+        </section>
+      </section>
+
+      <section>
+        <h3 class="h3" id="position">position use</h3>
         <section>
-            <h3 class="h3" id="display">display use</h3>
-            <section>
-                <h5 class="h5">here is inline blocktest</h5>
-                <div class="ba mb1 di p2">inline</div>
-                <div class="ba mb1 di p2">inline</div>
-                <div class="ba mb1 di p2">inline</div>
-                <div class="ba mb1 di p2">inline</div>
-            </section>
-            <section>
-                <h5 class="h5">here is inline block, dib=display: inline-block</h5>
-                <div class="ba mb1 dib p2" style="width: 49%;">inline-block</div>
-                <div class="ba mb1 dib p2" style="width: 49%;">inline-block</div>
-                <div class="ba mb1 dib p2" style="width: 49%;">inline-block</div>
-                <div class="ba mb1 dib p2" style="width: 49%;">inline-block</div>
-            </section>
-            <section>
-                <h5 class="h5">here is inline block, db=display: block</h5>
-                <span class="ba mb1 db p2" style="width: 49%;">display block width: 49%;</span>
-                <span class="ba mb1 db p2" style="width: 49%;">display block width: 49%;</span>
-                <span class="ba mb1 db p2" style="width: 49%;">display block width: 49%;</span>
-                <span class="ba mb1 db p2" style="width: 49%;">display block width: 49%;</span>
-            </section>
+          <h5 calss="h5">position use</h5>
+          <div class="ba b--black-50 p1 pr" style="clear: both; width: 55%">
+            <h6 class="h6">here is position relative</h6>
+            <div class="ba b--black-50 p1 pa di par0 pat0">
+              position right:0 par0 top: 0 part0
+            </div>
+          </div>
         </section>
+      </section>
+
+      <section>
+        <h3 class="h3" id="type">type use</h3>
         <section>
-            <h3 class="h3" id="margin">margin use</h3>
-            <section style="overflow: hidden;" class="">
-                <h5 class="h5">margin top = mt[1-8]</h5>
-                <div class="bt bb mt1 db p2" style="width: 55%;">mt1=margin-top: $space * 1; ($space default is
-                    8px)</div>
-                <div class="bt bb mt2 db p2" style="width: 55%;">mt2=margin-top: $space * 2; ($space default is
-                    8px)</div>
-                <div class="bt bb mt4 db p2" style="width: 55%;">mt4=margin-top: $space * 4; ($space default is
-                    8px)</div>
-                <div class="bt bb mt8 db p2" style="width: 55%;">mt8=margin-top: $space * 8; ($space default is
-                    8px)</div>
-
-            </section>
-            <section style="overflow: hidden;" class="">
-                <h5 class="h5">margin left = ml[1-8]</h5>
-                <div class="bl br b--black-50 ml1 db p2" style="width: 55%;">ml1=margin-bottom: $space * 1; ($space
-                    default
-                    is
-                    8px)</div>
-                <div class="bl br b--black-50 ml2 db p2" style="width:  55%">ml2=margin-bottom: $space * 2; ($space
-                    default
-                    is
-                    8px)</div>
-                <div class="bl br b--black-50 ml4 db p2" style="width:  55%">ml4=margin-bottom: $space * 4; ($space
-                    default
-                    is
-                    8px)</div>
-                <div class="bl br b--black-50 ml8 db p2" style="width:  55%">ml8=margin-bottom: $space * 8; ($space
-                    default
-                    is
-                    8px)</div>
-
-            </section>
+          <h6 calss="h6">here is h6 text</h6>
+          <h5 calss="h5">here is h5 text</h5>
+          <h4 calss="h4">here is h4 text</h4>
+          <h3 calss="h3">here is h3 text</h3>
+          <h2 calss="h2">here is h2 text</h2>
+          <h1 calss="h1">here is h1 text</h1>
         </section>
-        <section>
-            <h3 class="h3" id="padding">padding use</h3>
-            <section style="overflow: hidden;" class="">
-                <h5 class="h5">padding top = pt[1-8]</h5>
-                <div class="bt bb mt1 db pt1" style="width: 55%;">pt1=padding-top: $space * 1; ($space default is
-                    8px)</div>
-                <div class="bt bb mt2 db pt2" style="width: 55%;">pt2=padding-top: $space * 2; ($space default is
-                    8px)</div>
-                <div class="bt bb mt4 db pt4" style="width: 55%;">pt4=padding-top: $space * 4; ($space default is
-                    8px)</div>
-                <div class="bt bb mt8 db pt8" style="width: 55%;">pt8=padding-top: $space * 8; ($space default is
-                    8px)</div>
+      </section>
 
-            </section>
-            <section style="overflow: hidden;" class="">
-                <h5 class="h5">padding left = pl[1-8]</h5>
-                <div class="bl br b--black-50 db pl1" style="width: 55%;">pl1=padding-left: $space * 1; ($space default
-                    is
-                    8px)</div>
-                <div class="bl br b--black-50 db pl2" style="width: 55%;">pl2=padding-left: $space * 2; ($space default
-                    is
-                    8px)</div>
-                <div class="bl br b--black-50 db pl4" style="width: 55%;">pl4=padding-left: $space * 4; ($space default
-                    is
-                    8px)</div>
-                <div class="bl br b--black-50 db pl8" style="width: 55%;">pl8=padding-left: $space * 8; ($space default
-                    is
-                    8px)</div>
-
-            </section>
-        </section>
-
-        <section>
-            <h3 class="h3" id="position">position use</h3>
-            <section>
-                <h5 calss="h5">position use</h5>
-                <div class="ba b--black-50 p1 pr" style="clear:both; width:55%;">
-                    <h6 class="h6">here is position relative</h6>
-                    <div class="ba b--black-50 p1 pa di par0 pat0">
-                        position right:0 par0 top: 0 part0
-                    </div>
-                </div>
-            </section>
-        </section>
-
-
-        <section>
-            <h3 class="h3" id="type">type use</h3>
-            <section>
-                <h6 calss="h6">here is h6 text</h6>
-                <h5 calss="h5">here is h5 text</h5>
-                <h4 calss="h4">here is h4 text</h4>
-                <h3 calss="h3">here is h3 text</h3>
-                <h2 calss="h2">here is h2 text</h2>
-                <h1 calss="h1">here is h1 text</h1>
-            </section>
-        </section>
-
-        <hr />
+      <hr />
     </main>
 
-    <footer style="text-align: center;" class="mb6">
-        <span class="p1 mr1"><a targte="_blank" style="color: rgba(0, 0, 0, 1)" href="https://github.com/ZWkang">
-                github</a></span>
-        <span class="p1 mr1"><a targte="_blank" style="color: rgba(0, 0, 0, 1)" href="http://ZWkang.com">
-                blog</a></span>
-        <span class="p1 mr1"><a targte="_blank" style="color: rgba(0, 0, 0, 1)"
-                href="https://github.com/ZWkang/Boreads">project
-                Boreads</a></span>
+    <footer style="text-align: center" class="mb6">
+      <span class="p1 mr1"
+        ><a
+          targte="_blank"
+          style="color: rgba(0, 0, 0, 1)"
+          href="https://github.com/ZWkang"
+        >
+          github</a
+        ></span
+      >
+      <span class="p1 mr1"
+        ><a
+          targte="_blank"
+          style="color: rgba(0, 0, 0, 1)"
+          href="http://ZWkang.com"
+        >
+          blog</a
+        ></span
+      >
+      <span class="p1 mr1"
+        ><a
+          targte="_blank"
+          style="color: rgba(0, 0, 0, 1)"
+          href="https://github.com/ZWkang/Boreads"
+          >project Boreads</a
+        ></span
+      >
     </footer>
-</body>
-
+  </body>
 </html>

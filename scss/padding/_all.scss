@@ -2,19 +2,19 @@ $space: 1rem !default;
 $ranges: ('top', 'right', 'bottom', 'left') !default;
 
 @mixin build-padding {
-    @for $index from 1 through 8 {
-        @each $range in $ranges {
-            $r: str-slice(quote($range), 1, 1);
+  @for $index from 1 through 8 {
+    @each $range in $ranges {
+      $r: str-slice(quote($range), 1, 1);
 
-            .p#{$r}#{$index} {
-                padding-#{$range}: $space * $index;
-            }
-        }
-
-        .p#{$index} {
-            padding: $space * $index;
-        }
+      .p#{$r}#{$index} {
+        padding-#{$range}: $space * $index;
+      }
     }
+
+    .p#{$index} {
+      padding: $space * $index;
+    }
+  }
 }
 
 @include build-padding();

@@ -2,82 +2,102 @@
 
 $font-family: '' !default;
 
-$line-small: 1.0 !default;
+$line-small: 1 !default;
 $line-midlle: 1.5 !default;
 $line-big: 2 !default;
 
 body {
-    font-family: $font-family;
-    line-height: $line-midlle;
-    font-weight: 400;
+  font-family: $font-family;
+  line-height: $line-midlle;
+  font-weight: 400;
 }
 
-$response: (0: (2rem, 1.75rem, 1.5rem, 1.25rem, 1.25rem, 1.25rem),
-    768px: (4rem, 2rem, 1.5rem, 1.25rem, 1.25rem, 1.25rem),
-    1024px: (6rem, 3rem, 2rem, 1.25rem, 1.25rem, 1.25rem)) !default;
+$response: (
+  0: (
+    2rem,
+    1.75rem,
+    1.5rem,
+    1.25rem,
+    1.25rem,
+    1.25rem,
+  ),
+  768px: (
+    4rem,
+    2rem,
+    1.5rem,
+    1.25rem,
+    1.25rem,
+    1.25rem,
+  ),
+  1024px: (
+    6rem,
+    3rem,
+    2rem,
+    1.25rem,
+    1.25rem,
+    1.25rem,
+  ),
+) !default;
 
 $textAligns: (left, right, center) !default;
 
 @mixin build-type {
-    @each $breakp in map-keys($response) {
-        @include break($breakp) {
-            $keylist: map-get($response, $breakp);
+  @each $breakp in map-keys($response) {
+    @include break($breakp) {
+      $keylist: map-get($response, $breakp);
 
-            @for $i from 1 to length($keylist) {
-                $l: nth($keylist, $i);
+      @for $i from 1 to length($keylist) {
+        $l: nth($keylist, $i);
 
-                .h#{$i} {
-                    font-size: $l;
-                }
-
-                h#{$i} {
-                    font-size: $l;
-                }
-            }
+        .h#{$i} {
+          font-size: $l;
         }
+
+        h#{$i} {
+          font-size: $l;
+        }
+      }
     }
+  }
 }
 
 @include build-type();
 
-
-
 @function firstletter($name) {
-    @return str-slice(quote($name), 1, 1);
+  @return str-slice(quote($name), 1, 1);
 }
 
 @mixin build-textAlign {
-    @each $textAlign in $textAligns {
-        $tt: firstletter($textAlign);
+  @each $textAlign in $textAligns {
+    $tt: firstletter($textAlign);
 
-        .ta#{$tt} {
-            text-align: $textAlign;
-        }
+    .ta#{$tt} {
+      text-align: $textAlign;
     }
+  }
 }
 
 @include build-textAlign();
 
 .type-margins {
+  h1,
+  .h1 {
+    margin-bottom: $space;
+  }
 
-    h1,
-    .h1 {
-        margin-bottom: $space;
-    }
+  h2,
+  .h2 {
+    margin-bottom: $space;
+  }
 
-    h2,
-    .h2 {
-        margin-bottom: $space;
-    }
-
-    h3,
-    h4,
-    h5,
-    h6,
-    p,
-    dl,
-    ol,
-    ul {
-        margin-bottom: $space;
-    }
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  dl,
+  ol,
+  ul {
+    margin-bottom: $space;
+  }
 }

@@ -1,11 +1,9 @@
 @mixin break($breakpoint) {
-    @if ($breakpoint !=0) {
-        @media (max-width: $breakpoint) {
-            @content;
-        }
+  @if ($breakpoint !=0) {
+    @media (max-width: $breakpoint) {
+      @content;
     }
-
-    @else {
-        @content
-    }
+  } @else {
+    @content;
+  }
 }

@@ -7,11 +7,10 @@ a super tiny css lib.
 [Boreads use link](https://zwkang.github.io/Boreads)
 
 ```js
-import "Boreads/css/index.css";
+import 'Boreads/css/index.css';
 ```
 
 ## only css!!
-
 
 # Author
 

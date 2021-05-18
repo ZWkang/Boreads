@@ -3,66 +3,64 @@ $incList: (0, 8, 16, 32, 48, 80, 112, 240) !default;
 $responsive-image-max-x: 16 !default;
 $responsive-image-max-y: 16 !default;
 
-
 .image {
-    position: relative;
-    display: block;
-    box-sizing: border-box;
+  position: relative;
+  display: block;
+  box-sizing: border-box;
 }
 
 .img-full {
-    width: 100%;
-    height: auto;
-    display: block;
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 @mixin fix-size-with-image {
-    @each $inc in $incList {
-        $image-temp: $imageSizeBase + $inc;
+  @each $inc in $incList {
+    $image-temp: $imageSizeBase + $inc;
 
-        .is-#{$image-temp}-#{$image-temp} {
-            width: $image-temp#{px};
-            height: $image-temp#{px};
+    .is-#{$image-temp}-#{$image-temp} {
+      width: $image-temp#{px};
+      height: $image-temp#{px};
 
-            &>img {
-                @extend .img-full;
-            }
-        }
+      & > img {
+        @extend .img-full;
+      }
     }
+  }
 }
 
 @include fix-size-with-image();
 
-
 .rounded {
-    border-radius: 99999px;
-    overflow: hidden;
+  border-radius: 99999px;
+  overflow: hidden;
 }
 
 .image-responsive-clildren-full {
-    bottom: 0;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    display: block;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  display: block;
 }
 
 @mixin fix-responsive-image {
-    @for $x from 1 to $responsive-image-max-x {
-        @for $y from 1 to $responsive-image-max-y {
-            .is-#{$x}-by-#{$y} {
-                padding-bottom: (($x / $y) * 100) * 1%;
-                box-sizing: border-box;
+  @for $x from 1 to $responsive-image-max-x {
+    @for $y from 1 to $responsive-image-max-y {
+      .is-#{$x}-by-#{$y} {
+        padding-bottom: (($x / $y) * 100) * 1%;
+        box-sizing: border-box;
 
-                &>img {
-                    @extend .image-responsive-clildren-full;
-                }
-            }
+        & > img {
+          @extend .image-responsive-clildren-full;
         }
+      }
     }
+  }
 }
 
 @include fix-responsive-image();
