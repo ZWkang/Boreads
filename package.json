@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/ZWkang/Boreads#readme",
   "devDependencies": {
-    "sass": "1.33.0"
+    "sass": "1.34.0"
   },
   "files": [
     "css",
